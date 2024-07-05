@@ -1,0 +1,23 @@
+@use "../abstracts/mixins";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Gordita", sans-serif;
+  color: var(--text-color);
+  background: var(--body-bg);
+}
+
+.container {
+  padding-inline: 0;
+  @include mixins.screen(sm) {
+    padding-inline: 20px;
+  }
+}
+
+.icon {
+  filter: var(--icon-color);
+}

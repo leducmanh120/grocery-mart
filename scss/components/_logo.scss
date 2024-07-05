@@ -1,0 +1,22 @@
+@use "../abstracts/mixins";
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  @include mixins.screen(lg) {
+    gap: 10px;
+  }
+  &__img {
+    @include mixins.screen(lg) {
+      width: 24px;
+    }
+  }
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    @include mixins.screen(lg) {
+      font-size: 1.8rem;
+    }
+  }
+}

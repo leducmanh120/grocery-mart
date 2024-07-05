@@ -1,0 +1,38 @@
+@use "../abstracts/mixins";
+
+.home {
+  &__container {
+    margin-top: 40px;
+    @include mixins.screen(md) {
+      margin-top: 30px;
+    }
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: calc(3.4 / 2.4);
+    @include mixins.screen(md) {
+      font-size: 2.2rem;
+      line-height: calc(3.2 / 2.2);
+    }
+  }
+  &__cate {
+    --grid-gutter-x: 50px;
+    @include mixins.screen(lg) {
+      --grid-gutter-x: 24px;
+    }
+    @include mixins.screen(md) {
+      --grid-gutter-y: 20px;
+    }
+  }
+  &__product {
+    --grid-gutter-x: 30px;
+    --grid-gutter-y: 30px;
+  }
+}

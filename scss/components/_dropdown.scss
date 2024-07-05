@@ -1,0 +1,161 @@
+@use "../abstracts/mixins";
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  display: none;
+  width: min(100%, 1240px);
+  padding-top: 54px;
+  @include mixins.screen(lg) {
+    position: initial;
+    padding-top: 0;
+  }
+  &__inner {
+    --inner-padding: 30px;
+    position: relative;
+    padding: var(--inner-padding);
+    border-radius: 20px;
+    background: var(--dropdown-bg);
+    box-shadow: 0px 40px 90px 20px var(--dropdown-shadow);
+    @include mixins.screen(lg) {
+      padding: 0 40px;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+    @include mixins.screen(sm) {
+      padding-inline: 20px;
+    }
+    &::before {
+      content: url(../icons/dropdown-arrow.svg);
+      position: absolute;
+      top: -13px;
+      left: var(--arrow-left-pos);
+      transform: translateX(-50%);
+      filter: var(--dropdown-arrow-color);
+      @include mixins.screen(lg) {
+        content: none;
+      }
+    }
+  }
+}
+
+.top-menu {
+  --main-column-width: 292px;
+  --max-inner-height: calc(min(582px, 100vh - 138px) - var(--inner-padding) * 2);
+  position: relative;
+  &__main {
+    width: var(--main-column-width);
+    height: var(--max-inner-height);
+    border-right: 1px solid var(--top-menu-border-color);
+    overflow-y: auto;
+    @include mixins.screen(lg) {
+      width: 100%;
+      height: auto;
+      border-right: none;
+    }
+  }
+}
+
+.menu-column {
+  display: flex;
+  gap: 14px;
+  @include mixins.screen(lg) {
+    margin-top: 10px;
+  }
+  @include mixins.screen(sm) {
+    margin-top: 3px;
+  }
+  &__icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+  }
+  &__icon-shape {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  &__icon-item {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+  }
+  &__content {
+    flex: 1;
+  }
+  &__heading {
+    margin-top: 6px;
+    font-weight: 500;
+    line-height: 1.5;
+    @include mixins.screen(lg) {
+      margin-bottom: 26px;
+    }
+    @include mixins.screen(sm) {
+      margin-bottom: 19px;
+    }
+  }
+  &__list {
+    margin-top: 19px;
+    @include mixins.screen(lg) {
+      margin-top: 0;
+    }
+  }
+  &__item {
+    &--active .sub-menu {
+      display: grid;
+    }
+  }
+  &__item--active > &__link,
+  &__item:hover > &__link {
+    color: #0071dc;
+    font-weight: 500;
+  }
+  &__link {
+    display: block;
+    padding-block: 7px;
+    font-size: 1.4rem;
+    line-height: calc(2 / 1.4);
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--main-column-width);
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--inner-padding);
+  padding-left: var(--inner-padding);
+  overflow-y: auto;
+  @include mixins.screen(lg) {
+    position: initial;
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+  @include mixins.screen(sm) {
+    margin-top: 4px;
+  }
+  &--not-main {
+    position: initial;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: var(--max-inner-height);
+    padding-left: 0;
+    @include mixins.screen(lg) {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    @include mixins.screen(sm) {
+      gap: 20px;
+    }
+  }
+}

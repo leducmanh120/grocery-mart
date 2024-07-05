@@ -1,0 +1,55 @@
+@use "../abstracts/mixins";
+
+html {
+  --scrollbar-thumb-bg: rgba(0, 0, 0, 0.15);
+  --body-bg: #f6f6f6;
+  --text-color: #1a162e;
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(16%) saturate(2127%) hue-rotate(210deg) brightness(96%)
+    contrast(97%);
+
+  // Header
+  --header-bg: #eee;
+  --header-shadow: rgba(237, 237, 246, 0.2);
+  --top-act-group-bg: #fff;
+  --top-act-group-shadow: rgba(237, 237, 246, 0.2);
+  --top-act-group-separate: #ededf6;
+
+  // Dropdown
+  --dropdown-bg: #fff;
+  --dropdown-shadow: rgba(200, 200, 200, 0.4);
+  --top-menu-border-color: #d2d1d6;
+
+  // Sidebar
+  --sidebar-bg: #fff;
+
+  // Footer
+  --footer-bg: var(--header-bg);
+
+  // Category item
+  --cate-item-bg: #eee;
+  --cate-item-thumb-bg: #fff;
+  --cate-item-title: #000;
+
+  // Buttons
+  --filter-btn-bg: #fff;
+  --like-btn-bg: #fff;
+
+  // Product card
+  --product-card-bg: #fff;
+  --product-card-shadow: rgba(237, 237, 246, 0.2);
+
+  // Filter form
+  --filter-form-bg: #fff;
+  --filter-form-arrow: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(238deg)
+    brightness(106%) contrast(101%);
+  --filter-form-shadow: rgba(200, 200, 200, 0.4);
+  --filter-form-tag-bg: #f8f8fb;
+
+  @include mixins.screen(lg) {
+    --header-bg: #fff;
+  }
+  @include mixins.screen(md) {
+    --cate-item-bg: #fff;
+    --cate-item-thumb-bg: transparent;
+  }
+}
