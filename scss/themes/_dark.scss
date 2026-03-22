@@ -1,0 +1,8 @@
+@use '../abstracts/mixins';
+
+html.dark {
+  // Common
+  --text-color: #fff;
+  --body-bg-color: #292e39;
+  --icon-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(9%) hue-rotate(176deg) brightness(104%) contrast(104%);
+}
