@@ -6,4 +6,14 @@ html {
   --text-color: #1a162e;
   --body-bg-color: #f6f6f6;
   --icon-filter: brightness(0) saturate(100%) invert(8%) sepia(12%) saturate(3475%) hue-rotate(212deg) brightness(96%) contrast(96%);
+
+  // Header
+  --header-bg-color: #eee;
+  --top-act-group-bg-color: #fff;
+  --top-act-group-shadow-color: rgba(237, 237, 246, 0.2);
+  --top-act-separate-color: #ededf6;
+  --top-act-avatar-shadow-color: rgba(0, 0, 0, 0.08);
+  @include mixins.screen(lg) {
+    --header-bg-color: #fff;
+  }
 }

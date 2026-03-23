@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <!-- Scripts -->
+    <script src="./assets/js/scripts.js"></script>
   </head>
   <body>
-    <div class="container">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima obcaecati vel deserunt optio, ea eius alias eligendi? Similique sunt
-      in tenetur fuga repellendus mollitia sed omnis expedita natus, ipsa eos?
-    </div>
+    <header id="header" class="header"></header>
+    <script>
+      load('#header', './templates/header.html');
+    </script>
   </body>
 </html>
