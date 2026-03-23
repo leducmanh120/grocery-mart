@@ -10,4 +10,7 @@ html.dark {
   --header-bg-color: #171c28;
   --top-act-group-bg-color: #292e39;
   --top-act-group-shadow-color: rgba(0, 0, 0, 0.2);
+  @include mixins.screen(lg) {
+    --header-shadow-color: rgba(0, 0, 0, 0.2);
+  }
 }

@@ -15,5 +15,6 @@ html {
   --top-act-avatar-shadow-color: rgba(0, 0, 0, 0.08);
   @include mixins.screen(lg) {
     --header-bg-color: #fff;
+    --header-shadow-color: rgba(237, 237, 246, 0.2);
   }
 }
