@@ -8,6 +8,7 @@
 }
 
 .top-bar {
+  position: relative;
   display: flex;
   align-self: center;
   padding-block: 20px;
@@ -36,6 +37,11 @@
   &__list {
     display: flex;
     align-self: center;
+  }
+  &__item {
+    &:hover .dropdown {
+      display: block;
+    }
   }
   &__link {
     display: flex;

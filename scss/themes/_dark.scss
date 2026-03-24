@@ -4,7 +4,7 @@ html.dark {
   // Common
   --text-color: #fff;
   --body-bg-color: #292e39;
-  --icon-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(9%) hue-rotate(176deg) brightness(104%) contrast(104%);
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(9%) hue-rotate(176deg) brightness(104%) contrast(104%);
 
   // Header
   --header-bg-color: #171c28;
@@ -13,4 +13,10 @@ html.dark {
   @include mixins.screen(lg) {
     --header-shadow-color: rgba(0, 0, 0, 0.2);
   }
+
+  // Dropdown
+  --dropdown-bg-color: #2f3440;
+  --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(20%) sepia(10%) saturate(890%) hue-rotate(184deg) brightness(99%)
+    contrast(98%);
 }
